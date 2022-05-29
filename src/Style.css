@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+/* Header Css */
+.container__header{
+    text-align: center;
+    margin-top: 50px;
+    
+}
+.container__header p {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: light;
+    margin-right: 10px;
+    transform: rotate(-90deg);
+}
+.container__header h1{
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+/* Button Css */
+.container__button button{
+    background: none;
+    border: none;
+}
+
+
+/* Navbar Css */
+
+.nav{
+    display: flex;
+    margin-left: 150px;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+.nav ul li{
+    margin: 10px 60px;
+    text-decoration: none;
+}
+
+/* Card Css */
+.main__container{
+    display: flex;
+}
+
+
+.card__container{
+    display: flex;
+   
+}
+
+.card__container img{
+    width: 300px;
+    height: 200px;
+} 
+
+
+/* Small Card */
+.card__small{
+    display: flex;
+    width: 200px;
+    margin-bottom: 10px;
+    
+}
+
+.card__data{
+    display: flex;
+}
+
+.card__small img{
+    width: 100px;
+    height: 100px;
+}
+.small{
+    margin-left: 10px;
+}
+
+/* rightbar and left bar css */
+
+.rightbar{
+    width: 70%;
+}
+
+.sidebar{
+    width: 20%;
+    margin-left: 40px;
+}
+
+.main__container{
+    margin: 0px 10%;
+}
+
+.bigcard__data{
+    box-sizing: border-box;
+    padding-right: 20px;
+    margin-left: 20px;
+}
+.bigcard__data h5{
+    color: black;
+    text-decoration: none;
+}
+
+/* advertisement */
+.advertisement{
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 140px;
+    width: 200px;
+    height: 300px;
+    border: 2px solid rebeccapurple;
+    margin-left: 10px;
+    font-weight: bolder;
+}
