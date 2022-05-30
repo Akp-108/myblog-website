@@ -196,8 +196,13 @@ a{
 .home__bigcard__data{
     margin-top: 20px;
 }
+.Top{
+    display: inline-block;
+    margin-left: 600px;
+    margin-top: 40px;
+}
 
-@media (max-width: 400px){
+@media (max-width: 480px){
     .rightbar{
         width: 100%;
     }
@@ -218,5 +223,33 @@ a{
     .card__container img{
         width: 100px;
         height: 100px;
+    }
+
+    /* Home css */
+    .home__sec{
+        display: none;
+    }
+    .home__thir{
+        display: none;
+    }
+    .Top{
+
+        display: none;
+        /* margin-left: 600px; */
+        margin-top: 40px;
+    }
+
+    
+    .home__left{
+        width: 100%;
+    }
+    .home__left img{
+        width: 100%;
+    }
+    .home__first{
+        width: 100%;
+    }
+    .rightbar2{
+        width: 100%;
     }
 }

@@ -25,7 +25,7 @@ function App() {
         <Route path="/technology" element = {<Technology />} />
         <Route path="/fitness" element = {<Fitness />} />
         <Route path="/food" element = {<Food />} />
-        <Route path=":categoryid/article/:articleid" element = {<SingleBlogPage/>}/>
+        <Route path=":category/:articleid" element = {<SingleBlogPage/>}/>
       </Routes>
       </BrowserRouter>
       </Details>

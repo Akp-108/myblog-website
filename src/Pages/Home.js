@@ -27,7 +27,7 @@ const Home = () => {
           </div>
           <h1 style={{marginTop:"40px"}}>The Latest</h1>
           <hr style={{width:"200px",  thickness:"20px"}} />
-          <div className='home__left'>
+          <div className='home__left left1'>
                     {
                         detail.filter((article) => { return article.category === "bollywood" }).map((n) => (
                             <CardHome
@@ -40,7 +40,7 @@ const Home = () => {
                         ))
                     }
                 </div>
-          <div className='home__left'>
+          <div className='home__left left1'>
                     {
                         detail.filter((article) => { return article.category === "technology" }).map((n) => (
                             <CardHome
@@ -53,7 +53,7 @@ const Home = () => {
                         ))
                     }
                 </div>
-          <div className='home__left'>
+          <div className='home__left left1'>
                     {
                         detail.filter((article) => { return article.category === "food" }).map((n) => (
                             <CardHome
@@ -68,7 +68,7 @@ const Home = () => {
                 </div>
                 <h1 style={{marginTop:"40px", display : "inline-block"}}>Latest Articles</h1>
                 
-                <h1 style={{marginTop:"40px", display : "inline-block", marginLeft:"700px"}}>Top Posts</h1>
+                <h1 className='Top' >Top Posts</h1>
                 <hr style={{width:"200px",  thickness:"20px",}} />
                 
 
