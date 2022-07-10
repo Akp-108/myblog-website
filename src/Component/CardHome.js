@@ -2,9 +2,9 @@ import React from 'react'
 import { NavLink} from 'react-router-dom';
 
 const CardHome = (props) => {
-    const { imgUrl, title, description, articleid } = props;
+    const { imgUrl, title, description, articleid, fulldescription } = props;
     return (
-        <NavLink state={{ title: title, img: imgUrl, description: description, id: articleid }} to={`article/${articleid}`}>
+        <NavLink state={{ title: title, img: imgUrl, description: description, fulldescription:fulldescription, id: articleid }} to={`/article/${articleid}`}>
           <div className={articleid}>
             <div className="card__Home" >
               <div className='card__image'>

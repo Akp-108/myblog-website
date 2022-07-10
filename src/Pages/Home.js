@@ -1,13 +1,17 @@
-import React,{useContext} from 'react'
+import React,{ useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../Component/Card'
 import CardHome from '../Component/CardHome'
 import SmallCard from '../Component/SmallCard'
-import { store } from './Details'
 
 const Home = () => {
 
-  const [detail, setDetail] = useContext(store);
+    const[data,setData]=useState([])
+    useEffect(()=>{
+        const url = "http://localhost:8000/api/home";
+        fetch(url).then(res => res.json())
+            .then(res => setData(res)  )
+    },[])
   return (
 
     <div>
@@ -29,12 +33,13 @@ const Home = () => {
           <hr style={{width:"200px",  thickness:"20px"}} />
           <div className='home__left left1'>
                     {
-                        detail.filter((article) => { return article.category === "bollywood" }).map((n) => (
+                        data.filter((article) => { return article.category === "bollywood" }).map((n) => (
                             <CardHome
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 author={n.author}
                             />
                         ))
@@ -42,12 +47,13 @@ const Home = () => {
                 </div>
           <div className='home__left left1'>
                     {
-                        detail.filter((article) => { return article.category === "technology" }).map((n) => (
+                        data.filter((article) => { return article.category === "technology" }).map((n) => (
                             <CardHome
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 author={n.author}
                             />
                         ))
@@ -55,12 +61,13 @@ const Home = () => {
                 </div>
           <div className='home__left left1'>
                     {
-                        detail.filter((article) => { return article.category === "food" }).map((n) => (
+                        data.filter((article) => { return article.category === "food" }).map((n) => (
                             <CardHome
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 author={n.author}
                             />
                         ))
@@ -74,12 +81,13 @@ const Home = () => {
 
                 <div className='rightbar2'>
                     {
-                        detail.filter((article) => { return article.category === "mix" }).map((n) => (
+                        data.filter((article) => { return article.category === "mix" }).map((n) => (
                             <Card
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 author={n.author}
                             />
                         ))
@@ -87,11 +95,12 @@ const Home = () => {
                 </div>
                 <div className="sidebar2">
                     {
-                        detail.filter((article) => { return article.category === "mix" }).map((n) => (
+                        data.filter((article) => { return article.category === "mix" }).map((n) => (
                             <SmallCard
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 title={n.title.slice(0, 25)}
                                 author={n.author}
                             />
@@ -107,12 +116,13 @@ const Home = () => {
 
                 <div className='home__left'>
                     {
-                        detail.filter((article) => { return article.category === "footer1" }).map((n) => (
+                        data.filter((article) => { return article.category === "footer1" }).map((n) => (
                             <CardHome
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 author={n.author}
                             />
                         ))
@@ -121,12 +131,13 @@ const Home = () => {
 
                 <div className='home__left'>
                     {
-                        detail.filter((article) => { return article.category === "footer2" }).map((n) => (
+                        data.filter((article) => { return article.category === "footer2" }).map((n) => (
                             <CardHome
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 author={n.author}
                             />
                         ))
@@ -135,12 +146,13 @@ const Home = () => {
 
                 <div className='home__left'>
                     {
-                        detail.filter((article) => { return article.category === "footer3" }).map((n) => (
+                        data.filter((article) => { return article.category === "footer3" }).map((n) => (
                             <CardHome
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                                 author={n.author}
                             />
                         ))

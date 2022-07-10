@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
-import { store } from './Details'
+import React, {  useEffect, useState } from 'react'
 import Card from '../Component/Card'
 import SmallCard from '../Component/SmallCard';
 
 const Hollywood = () => {
-    const [detail, setDetail] = useContext(store);
-    console.log(detail);
+    const[data,setData]=useState([])
+    useEffect(()=>{
+        const url = "http://localhost:8000/api/holly";
+        fetch(url).then(res => res.json())
+            .then(res => setData(res)  )
+    },[])
+    // console.log(detail);
     return (
         <div>
             <h1 style={{ margin: "20px 10%", display: "inline-block" }}>Hollywood</h1>
@@ -13,12 +17,13 @@ const Hollywood = () => {
             <div className="main__container">
                 <div className='rightbar'>
                     {
-                        detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
+                        data.filter((article) => { return article.category === "Hollywood" }).map((n) => (
                             <Card
                                 articleid={n.id}
                                 imgUrl={n.Image}
                                 title={n.title}
                                 description={n.description.slice(0, 200)}
+                                fulldescription = {n.description}
                             />
                         ))
                     }
@@ -27,12 +32,14 @@ const Hollywood = () => {
 
                 <div className="sidebar">
                     {
-                        detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
+                        data.filter((article) => { return article.category === "Hollywood" }).map((n) => (
                             <SmallCard
-                                articleid={n.id}
-                                imgUrl={n.Image}
-                                description={n.description.slice(0, 200)}
-                                title={n.title.slice(0, 25)}
+                            articleid={n.id}
+                            imgUrl={n.Image}
+                            description={n.description.slice(0, 200)}
+                            title={n.title.slice(0, 25)}
+                            fulldescription = {n.description}
+                            author={n.author}
                             />
                         ))
                     }

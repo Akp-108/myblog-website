@@ -4,13 +4,13 @@ import './singlePage.css'
 
 const SingleBlogPage = () => {
 const location = useLocation();
-const {title, img, description} = location.state;
+const {title, img, fulldescription} = location.state;
 console.log(title)
   return (
     <div className='single__page'>
         <h1>{title}</h1>
         <img src={img} alt="" />
-        <p>{description}</p>
+        <p>{fulldescription}</p>
       
     </div>
   )
