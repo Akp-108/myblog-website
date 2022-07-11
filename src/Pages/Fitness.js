@@ -7,7 +7,7 @@ const Fitness = () => {
     const[data,setData]=useState([])
     useEffect(()=>{
         // https://blog-website-backend-node.herokuapp.com/api/fit
-        const url = "http://localhost:8000/api/fit";
+        const url = "https://blog-website-with-backend.herokuapp.com/api/fit";
         fetch(url).then(res => res.json())
             .then(res => setData(res)  )
     },[])

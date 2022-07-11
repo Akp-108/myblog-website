@@ -8,7 +8,7 @@ const Home = () => {
 
     const[data,setData]=useState([])
     useEffect(()=>{
-        const url = "http://localhost:8000/api/home";
+        const url = "https://blog-website-with-backend.herokuapp.com/api/home";
         fetch(url).then(res => res.json())
             .then(res => setData(res)  )
     },[])
